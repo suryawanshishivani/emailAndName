@@ -32,9 +32,9 @@
 
 //same function for mouseout as well only replace the mouseover by mouseout
 
-const myFo=document.querySelector('#myForm');
- const nameInput=document.querySelector('#name');
- const emailPut=document.querySelector('#Email');
+ const myFo=document.querySelector('#myForm');
+ //const nameInput=document.querySelector('#name');
+  //const emailPut=document.querySelector('#Email');
 // const msg=document.querySelector('.Msg');
 // const userList=document.querySelector('#Users');
 
@@ -42,13 +42,26 @@ const myFo=document.querySelector('#myForm');
 
 function onSubmit(e){
   e.preventDefault();
-  //localStorage.setItem("Name",nameInput);
- // console.log(nameInput.value);
+ // localStorage.setItem("Name",nameInput);
+ //console.log(nameInput.value);
 //  if(nameInput.value===''||emailPut.value===''){
 //  alert('please enter the field')}
 //  else{
 //   console.log('congtzzz you are enter succesfully')
 //  }
-localStorage.setItem('name',nameInput.value);
-localStorage.setItem('email',emailPut.value);
+//localStorage.setItem('name',nameInput.value);
+//localStorage.setItem('email',emailPut.value);
+
+//localStorage.getItem('name');
+let nameInput =e.target.name.value;
+let emailPut= e.target.Email.value;
+let Obj={
+ name: nameInput,
+ email: emailPut
+};
+localStorage.setItem('userDetails',JSON.stringify(Obj));
+console.log(localStorage);
 }
+
+
+ 
