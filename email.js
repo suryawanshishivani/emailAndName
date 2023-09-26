@@ -25,20 +25,21 @@
 //     console.log("click")
 //      document.querySelector('#main').style.background='#ccc'
 //   document.querySelector('body').classList.add('bg-dark');
-// // //document.querySelector('.items').lastElementChild.innerHTML='<h2>Hello Click</h2>'
+//document.querySelector('.items').lastElementChild.innerHTML='<h2>Hello Click</h2>'
     
 //      });
 
 
 //same function for mouseout as well only replace the mouseover by mouseout
 
- const myFo=document.querySelector('#myForm');
- //const nameInput=document.querySelector('#name');
-  //const emailPut=document.querySelector('#Email');
+
+const myFo=document.querySelector('#myForm');
+ //const nameInput=document.getElementById('name');
+//const emailPut=document.getElementById('Email');
 // const msg=document.querySelector('.Msg');
 // const userList=document.querySelector('#Users');
 
-  myFo.addEventListener('submit' ,onSubmit);
+ myFo.addEventListener('submit' ,onSubmit);
 
 function onSubmit(e){
   e.preventDefault();
@@ -55,13 +56,26 @@ function onSubmit(e){
 //localStorage.getItem('name');
 let nameInput =e.target.name.value;
 let emailPut= e.target.Email.value;
-let Obj={
- name: nameInput,
- email: emailPut
+ let Obj={
+ Name:nameInput,
+ Email:emailPut
+
 };
-localStorage.setItem('userDetails',JSON.stringify(Obj));
-console.log(localStorage);
+
+ localStorage.setItem('userDetails',JSON.stringify(Obj));
+// // //console.log(localStorage);
+showUsersScreen(Obj);
 }
+ function showUsersScreen(Obj){
+  const parentElement=document.getElementById("listOfItems");
+   const childElement=document.createElement('li');
+  childElement.textContent=Obj.Name+'--- ' +Obj.Email
+  parentElement.appendChild(childElement);
+
+  
+ }
+
+
 
 
  
