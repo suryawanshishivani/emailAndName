@@ -74,12 +74,19 @@ showUsersScreen(Obj);
 const child2=document.createElement('btn');
 child2.innerHTML='<button class="btn-outline-secondary">delete</button>'
 childElement.appendChild(child2);
+const child3=document.createElement('btn');
+child3.innerHTML='<button class="btn-outline-secondary">Edit</button>'
+childElement.appendChild(child3);
 child2.onclick= ()=>{
   localStorage.removeItem(Obj.Email)
   parentElement.removeChild(childElement)
 }
-// parentElement.appendChild(childElement);
-// childElement.appendChild(child2);
+child3.onclick= ()=>{
+  localStorage.removeItem(Obj.Email)
+  parentElement.removeChild(childElement)
+   document.getElementById("name").value=Obj.Name
+ document.getElementById("Email").value=Obj.Email
+}
 }
  
 
