@@ -62,7 +62,7 @@ let emailPut= e.target.Email.value;
 
 };
 
- localStorage.setItem('userDetails',JSON.stringify(Obj));
+ localStorage.setItem(Obj.Email,JSON.stringify(Obj));
 // // //console.log(localStorage);
 showUsersScreen(Obj);
 }
@@ -71,9 +71,22 @@ showUsersScreen(Obj);
    const childElement=document.createElement('li');
   childElement.textContent=Obj.Name+'--- ' +Obj.Email
   parentElement.appendChild(childElement);
+const child2=document.createElement('btn');
+child2.innerHTML='<button class="btn-outline-secondary">delete</button>'
+childElement.appendChild(child2);
+child2.onclick= ()=>{
+  localStorage.removeItem(Obj.Email)
+  parentElement.removeChild(childElement)
+}
+// parentElement.appendChild(childElement);
+// childElement.appendChild(child2);
+}
+ 
+
+
+
 
   
- }
 
 
 
